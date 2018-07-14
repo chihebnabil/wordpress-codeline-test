@@ -1,7 +1,7 @@
-/*
- Theme Name:     Unite Child
- Description:    Unite Child Theme
- Author:         CHIHEB Nabil
- Author URI:     http://chihebnabil.com/
- Version:        1.0.0
-*/
+<?php
+
+// enqueue css file
+add_action( 'wp_enqueue_scripts', 'unite_child_enqueue_styles' );
+function unite_child_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+}
