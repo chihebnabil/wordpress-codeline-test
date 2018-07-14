@@ -7,8 +7,8 @@ function unite_child_enqueue_styles() {
 }
 /* Add custom fields to Film post type*/
 add_action( 'init', 'create_film_post_type' );
-
 add_action( 'init', 'create_films_taxonomies' );
+add_theme_support('post-thumbnails');
 
 
 
@@ -18,10 +18,14 @@ function create_film_post_type() {
       array(
         'labels' => array(
           'name' => __( 'Films' ),
-          'singular_name' => __( 'Film' )
+          'singular_name' => __( 'Film' ),
+          'add_new_item'               => __( 'Add New Film', 'Unite-child' ),
+          'new_item_name'              => __( 'New Film Name', 'Unite-child' ),
         ),
         'public' => true,
         'has_archive' => true,
+        'supports' => array( 'title','editor','thumbnail' )
+
       )
     );
   }
@@ -53,7 +57,7 @@ function create_film_post_type() {
                 'menu_name'                  => __( 'Genres', 'Unite-child' )
              ),
               'rewrite' => array( 'slug' => 'genre' ),
-              'hierarchical' => true,
+              'hierarchical' => false,
           )
       );
   
@@ -82,7 +86,7 @@ function create_film_post_type() {
                 'menu_name'                  => __( 'Years', 'Unite-child' )
              ),
             'rewrite' => array( 'slug' => 'year' ),
-            'hierarchical' => true,
+            'hierarchical' => false,
         )
     );
 
@@ -110,7 +114,7 @@ function create_film_post_type() {
                 'menu_name'                  => __( 'Actors', 'Unite-child' )
              ),
             'rewrite' => array( 'slug' => 'actor' ),
-            'hierarchical' => true,
+            'hierarchical' => false,
         )
     );
 
@@ -138,7 +142,7 @@ function create_film_post_type() {
                 'menu_name'                  => __( 'Countries', 'Unite-child' )
              ),
             'rewrite' => array( 'slug' => 'country' ),
-            'hierarchical' => true,
+            'hierarchical' => false,
         )
     );
 }
