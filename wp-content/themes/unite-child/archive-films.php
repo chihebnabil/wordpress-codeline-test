@@ -21,16 +21,21 @@
 <?php } ?>
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="col-md-8 col-l-8">
 
 		
 
 			<?php get_template_part('loop'); ?>
-
 			<?php get_template_part('pagination'); ?>
-			<?php get_sidebar(); ?>
 
 		</section>
+        <section class="col-md-4 col-l-4">
+         <div class="container">
+         <?php   get_sidebar(); ?>
+
+         </div>
+
+        </section>
 		<!-- /section -->
 	</main>
 

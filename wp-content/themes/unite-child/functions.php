@@ -151,6 +151,8 @@ function create_film_post_type() {
 
 function recent_films() {
     ?>
+    <h3>Recent Films</h3>
+
     <ul>
     <?php
        
