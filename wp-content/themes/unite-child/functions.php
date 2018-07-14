@@ -9,6 +9,8 @@ function unite_child_enqueue_styles() {
 add_action( 'init', 'create_film_post_type' );
 add_action( 'init', 'create_films_taxonomies' );
 add_theme_support('post-thumbnails');
+// add short code
+add_shortcode('recent-films', 'recent_films');
 
 
 
@@ -146,7 +148,34 @@ function create_film_post_type() {
         )
     );
 }
-  ?>
 
+function recent_films() {
+    ?>
+    <ul>
+    <?php
+       
+        $args = array(
+            'post_type'=>'films',
+            'posts_per_page' => 5,
+            'order' => 'DESC');
+            $recent_posts = new WP_Query( $args );
+if ( $recent_posts->have_posts() ) {
+    while ( $recent_posts->have_posts() ) {
+        $recent = $recent_posts->the_post();
+        // do stuff
+        ?>
+	<li><a  href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+    
+     <?php
+    }
+    wp_reset_postdata();
+} else {
+    // none were found
+}
+
+    ?>
+    </ul>
+    <?php
+}
 
 
