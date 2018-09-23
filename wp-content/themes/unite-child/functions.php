@@ -1,4 +1,6 @@
 <?php
+// Unite - Child Theme
+// functions.php
 
 // enqueue css file
 add_action( 'wp_enqueue_scripts', 'unite_child_enqueue_styles' );
