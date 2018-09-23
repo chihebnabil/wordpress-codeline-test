@@ -1,16 +1,3 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Hôte: 192.168.10.10 (MySQL 5.7.22-0ubuntu18.04.1)
-# Base de données: wordpress
-# Temps de génération: 2018-07-14 17:23:56 +0000
-# ************************************************************
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
